@@ -9,6 +9,8 @@ import {
   StatusBar
   } from 'react-native';
 
+import MapView from 'react-native-maps';  
+
 import Icon from 'react-native-vector-icons/Ionicons';
 import {fetchWeather} from './weatherApi';
 import Highlight from 'react-native-highlight-words';
@@ -122,7 +124,24 @@ class App extends Component {
         </View> 
 
         <View style={styles.map}>
-          <Text style={styles.temp}>---Map Goes Here---</Text>
+
+          <MapView
+            provider="google"
+            style={StyleSheet.absoluteFillObject}
+          >
+            <MapView.Marker
+              title="Greenwich"
+              coordinate={{
+                latitude: 51.48,
+                longitude: 0
+              }}
+              calloutOffset={{
+                x: -50,
+                y: -50
+              }}
+            />
+          </MapView>
+
         </View>           
 
       </View>      
