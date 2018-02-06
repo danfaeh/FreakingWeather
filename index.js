@@ -1,3 +1,5 @@
+//React Native with Maps
+
 import React, { Component } from 'react';
 import {
   AppRegistry,
